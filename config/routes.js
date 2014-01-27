@@ -1,70 +1,70 @@
 module.exports = {
 
-	"prefix": "/api",
+	// "prefix": "/api",
 	
-	"get": {
+	// "get": {
 
-		"/user/create": {
+	// 	"/user/create": {
 
-			controller: "user",
-			method: "create",
-		},
+	// 		controller: "user",
+	// 		method: "create",
+	// 	},
 
-		"/user/login": {
+	// 	"/user/login": {
 
-			controller: "user",
-			method: "login",
-		},
+	// 		controller: "user",
+	// 		method: "login",
+	// 	},
 
-		"/user/logout": {
+	// 	"/user/logout": {
 
-			controller: "user",
-			method: "logout",
+	// 		controller: "user",
+	// 		method: "logout",
 
-			filters: ["authenticated"]
-		},
+	// 		filters: ["authenticated"]
+	// 	},
 
-		"/user/me": {
+	// 	"/user/me": {
 
-			controller: "user",
-			method: "me",
+	// 		controller: "user",
+	// 		method: "me",
 
-			filters: ["authenticated"]
-		},
+	// 		filters: ["authenticated"]
+	// 	},
 
-		"/user/get_rules": {
+	// 	"/user/get_rules": {
 
-			controller: "user",
-			method: "getRules",
+	// 		controller: "user",
+	// 		method: "getRules",
 
-			filters: ["authenticated"]
-		},
+	// 		filters: ["authenticated"]
+	// 	},
 
-		"/rule/span": {
+	// 	"/rule/span": {
 
-			controller: "rule",
-			method: "span",
+	// 		controller: "rule",
+	// 		method: "span",
 
-			filters: ["authenticated"]
-		},
+	// 		filters: ["authenticated"]
+	// 	},
 
-		"/rule/get": {
+	// 	"/rule/get": {
 
-			controller: "rule",
-			method: "get",
+	// 		controller: "rule",
+	// 		method: "get",
 
-			filters: ["authenticated"]
-		},
-	},
+	// 		filters: ["authenticated"]
+	// 	},
+	// },
 
-	"post": {
+	// "post": {
 		
-		"/rule/create": {
+	// 	"/rule/create": {
 
-			controller: "rule",
-			method: "create",
+	// 		controller: "rule",
+	// 		method: "create",
 
-			filters: ["authenticated"]
-		}
-	}
+	// 		filters: ["authenticated"]
+	// 	}
+	// }
 }

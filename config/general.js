@@ -1,6 +1,6 @@
 module.exports = {
 
-	state: "production",
+	state: "development",
 	lang: "en-US",
 
 	development: {
@@ -19,7 +19,7 @@ module.exports = {
 			user: "root",
 			password: "",
 
-			db: "insights",
+			db: "away",
 			host: "localhost"
 		}
 	},
