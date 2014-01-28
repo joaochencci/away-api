@@ -10,6 +10,22 @@ module.exports = {
 			method: "world",
 
 	 		filters: []
+	 	},
+
+	 	"/destination/create": {
+
+			controller: "destination",
+			method: "create",
+
+	 		filters: []
+	 	},
+
+		"/destination/get_next": {
+
+			controller: "destination",
+			method: "getNext",
+
+	 		filters: []
 	 	}
 	},
 

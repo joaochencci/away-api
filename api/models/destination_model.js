@@ -6,7 +6,8 @@ var DestinationSchema = new Schema({
 
 	type: {
 		type: String,
-		enum: ['city', 'country', 'point']
+		enum: ['city', 'country', 'point'],
+		required: true
 	},
 
 	name: {
