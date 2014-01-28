@@ -34,13 +34,7 @@ var DestinationSchema = new Schema({
 	info: {
 		type: String,
 		required: false
-	},
-
-	interested [{
-		type: Schema.ObjectId, 
-		ref: 'user', 
-		index: true
-	}]
+	}
 
 });
 

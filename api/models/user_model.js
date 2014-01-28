@@ -36,17 +36,25 @@ var UserSchema = new Schema({
 		required: true
 	},
 
-	places: {
-		//TODO: Trocar pra array esse campo
-		type: String,
-		required: false
-	},
+	matches: [{
 
-	matches: {
-		//TODO: Trocar pra array
-		type: String,
-		required: false
-	}
+		place: {
+			type: Schema.ObjectId, 
+			ref: 'user', 
+			index: true
+		},
+
+		viewed: {
+			type: Date,
+			required: true,
+			default: Date.now
+		},
+
+		choice:  {
+			type: Boolean,
+			required: true
+		}
+	}]
 
 });
 
