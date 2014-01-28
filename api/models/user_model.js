@@ -2,7 +2,7 @@ var mongoose = require("../services/mongoose");
 var Schema = mongoose.schema;
 var validate = require('mongoose-validator').validate;
 
-var DestinationSchema = new Schema({
+var UserSchema = new Schema({
 
 	name: {
 		type: String,
@@ -50,4 +50,4 @@ var DestinationSchema = new Schema({
 
 });
 
-
+module.exports = UserSchema;

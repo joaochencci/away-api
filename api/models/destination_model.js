@@ -6,7 +6,7 @@ var DestinationSchema = new Schema({
 
 	type: {
 		type: String,
-		enum: ['city', 'country','point']
+		enum: ['city', 'country', 'point']
 	},
 
 	name: {
@@ -27,15 +27,21 @@ var DestinationSchema = new Schema({
 		}
 	},
 
-	photos: {
-		//TODO: Trocar pra array
-		type: String,
-		required: true
-	},
+	photos: [{
+		type: String
+	}],
 
 	info: {
 		type: String,
 		required: false
-	}
+	},
+
+	interested [{
+		type: Schema.ObjectId, 
+		ref: 'user', 
+		index: true
+	}]
 
 });
+
+module.exports = DestinationSchema;
