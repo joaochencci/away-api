@@ -5,12 +5,6 @@ var User = mongoose.model("user");
 
 module.exports = {
 
-	index: function(req, res) {
-		res.json({
-			hello: "world"
-		})
-	},
-
 	login: function(req, res) {
 
 		if(!req.param('provider') || !req.param('token')) {
