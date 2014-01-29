@@ -7,6 +7,7 @@ module.exports = {
 	},
 
 	create: function(req, res) {
+
 		if(!req.param('name') || !req.param('email')){
 			res.json({
 				result: "error"
@@ -14,20 +15,29 @@ module.exports = {
 		}
 
 		var user = new User ({
+
 			name: req.param('name'),
 			email: req.param('email'),
-			social:
+
+			social: {
+				provider: "facebook",
+				access_token: req.param("token")
+			}
+
 			age: req.param('age'),
-			matches:
+			matches: []
 		});
 
 		user.save(function(err){
 
 			if(err){
+
 				res.json({
 					result: "error"
 				})
+
 			} else {
+				
 				res.json({
 					result: "success", 
 					user: user
