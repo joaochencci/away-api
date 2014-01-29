@@ -33,7 +33,7 @@ var UserSchema = new Schema({
 
 	age: {
 		type: int,
-		required: true
+		required: false
 	},
 
 	matches: [{

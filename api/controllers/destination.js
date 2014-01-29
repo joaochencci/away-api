@@ -10,7 +10,7 @@ module.exports = {
 	},
 
 	create: function(req, res) {
-		if ( req.param('type') || req.param('name') || req.param('lat') || req.param('lng') ){
+		if ( !req.param('type') || !req.param('name') || !req.param('lat') || !creq.param('lng') ){
 			res.json({
 				result: "error"
 			})
@@ -37,7 +37,7 @@ module.exports = {
 				})
 			} else {
 				res.json({
-					result: "sucess",
+					result: "success",
 					destination: destination
 				})
 			}
