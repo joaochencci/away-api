@@ -26,6 +26,22 @@ module.exports = {
 			method: "getNext",
 
 	 		filters: []
+	 	},
+
+		"/user/create": {
+
+			controller: "user",
+			method: "create",
+
+	 		filters: []
+	 	},
+
+		"/user/update": {
+
+			controller: "user",
+			method: "update",
+
+	 		filters: []
 	 	}
 	},
 
