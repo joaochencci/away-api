@@ -28,10 +28,10 @@ module.exports = {
 	 		filters: []
 	 	},
 
-		"/user/create": {
+		"/user/login": {
 
 			controller: "user",
-			method: "create",
+			method: "login",
 
 	 		filters: []
 	 	},

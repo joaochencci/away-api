@@ -1,6 +1,7 @@
-var mongoose = require("../service/mongoose");
-var Schema = mongoose.schema;
+var mongoose = require("../services/mongoose");
 var validate = require('mongoose-validator').validate;
+
+var Schema = mongoose.schema;
 
 var DestinationSchema = new Schema({
 

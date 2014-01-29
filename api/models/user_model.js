@@ -1,4 +1,5 @@
 var mongoose = require("../services/mongoose");
+
 var Schema = mongoose.schema;
 var validate = require('mongoose-validator').validate;
 
@@ -19,22 +20,28 @@ var UserSchema = new Schema({
 		}
 	},
 
-	social: {
-		access_token: {
-			type: String
-		},
+	social: [{
 
 		provider: {
+
+			required: true,
 			type: String,
 			enum: ["facebook"],
 			default: "facebook"		
-		}
-	},
+		},
 
-	age: {
-		type: int,
-		required: false
-	},
+		access_token: {
+
+			required: true,
+			type: String
+		},
+
+		uid: {
+
+			required: true,
+			type: String
+		} 
+	}],
 
 	matches: [{
 
