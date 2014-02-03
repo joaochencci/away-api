@@ -17,7 +17,6 @@ var DestinationSchema = new Schema({
 	},
 
 	geo: {
-
 		lat: {
 			type: Number,
 			required: true

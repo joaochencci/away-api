@@ -50,7 +50,9 @@ module.exports = {
 	getNext: function(req, res) {
 
 		Destination.find({
-			id: req.param('id')
+			type: req.param('type'),
+			//geo: req.param('geo'),
+			//price: req.param('price')
 		}, 
 
 		function (err, docs){
