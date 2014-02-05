@@ -12,14 +12,6 @@ module.exports = {
 	 		filters: []
 	 	},
 
-	 	"/destination/create": {
-
-			controller: "destination",
-			method: "create",
-
-	 		filters: []
-	 	},
-
 		"/destination/get_next": {
 
 			controller: "destination",
@@ -45,5 +37,14 @@ module.exports = {
 	 	}
 	},
 
-	"post": {}
+	"post": {
+		
+		"/destination/create": {
+
+			controller: "destination",
+			method: "create",
+
+	 		filters: []
+	 	},
+	}
 }

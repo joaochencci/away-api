@@ -57,7 +57,7 @@ var UserSchema = new Schema({
 			default: Date.now
 		},
 
-		choice:  {
+		state:  {
 			type: Boolean,
 			required: true
 		}

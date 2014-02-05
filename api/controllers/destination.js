@@ -11,21 +11,12 @@ module.exports = {
 
 	create: function(req, res) {
 
-		if ( !req.param('type') || !req.param('name') || !req.param('lat') || !req.param('lng') ){
-			res.json({
-				result: "error"
-			})
-		}
-
 		var destination = new Destination ({
 			
 			type: req.param('type'),
 			name: req.param('name'),
 			
-			geo: {
-				lat: req.param('lat'),
-				lng: req.param('lng')
-			},
+			geo: req.param('geo'),
 			
 			photos: req.param('photos'),
 			info: req.param('info')
@@ -34,10 +25,14 @@ module.exports = {
 		destination.save(function(err) {
 
 			if(err) {
+
 				res.json({
-					result: "error"
+					result: "error",
+					exception: err
 				})
+
 			} else {
+				
 				res.json({
 					result: "success",
 					destination: destination
