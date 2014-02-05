@@ -1,5 +1,7 @@
 var mongoose = require("../services/mongoose");
+
 var Destination = mongoose.model("destination");
+var User = mongoose.model("user");
 
 module.exports = {
 

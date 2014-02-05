@@ -12,12 +12,12 @@ module.exports = {
 	 		filters: []
 	 	},
 
-		"/destination/get_next": {
+		"/destination/next": {
 
 			controller: "destination",
 			method: "getNext",
 
-	 		filters: []
+	 		filters: ['authenticated']
 	 	},
 
 		"/user/login": {
@@ -33,7 +33,7 @@ module.exports = {
 			controller: "user",
 			method: "update",
 
-	 		filters: []
+	 		filters: ['authenticated']
 	 	}
 	},
 
@@ -44,7 +44,7 @@ module.exports = {
 			controller: "destination",
 			method: "create",
 
-	 		filters: []
+	 		filters: ['authenticated']
 	 	},
 	}
 }

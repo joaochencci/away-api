@@ -65,4 +65,14 @@ var UserSchema = new Schema({
 
 });
 
+UserSchema.methods.toJSON = function(){
+
+	var _this = this.toObject();
+	
+	delete _this.__v;
+	delete _this.social
+
+	return _this;
+}
+
 module.exports = UserSchema;

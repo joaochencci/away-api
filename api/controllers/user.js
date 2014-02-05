@@ -49,10 +49,12 @@ module.exports = {
 
 					else if(docs.length) {
 
+						res.cookie('user_id', docs[0]._id);
+
 						return res.json({
 							result: "success",
 							message: "User successfully found",
-							user: docs[0]
+							user: docs[0].toJSON()
 						})
 					}
 
@@ -83,11 +85,13 @@ module.exports = {
 
 							else {
 
+								res.cookie('user_id', user._id);
+
 								return res.json({
 									result: "success",
 									message: "User successfully created",
 									first_time: true,
-									user: user
+									user: user.toJSON()
 								})			
 							}
 

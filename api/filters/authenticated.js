@@ -1,7 +1,6 @@
 module.exports = function(req, res, ok) {
 
-	if(!req.cookies.user_id || !req.cookies.logged_in
-		|| req.cookies.user_id == "false") {
+	if(!req.cookies.user_id || !req.cookies.user_id.length) {
 
 		return res.json({
 
