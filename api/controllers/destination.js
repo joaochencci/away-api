@@ -55,11 +55,16 @@ module.exports = {
 
 			} else {
 
-				Destination.find({
-					_id: {
-						$nin: me.matches
-					}
-				}, function(err, docs) {
+				Destination
+				
+					.find({
+						_id: {
+							$nin: me.matches
+						}
+					})
+					.limit(req.param("limit") || 3)
+
+					.exec(function(err, docs) {
 
 					if(err) {
 
@@ -75,6 +80,7 @@ module.exports = {
 							message: "No destination to show",
 							destination: []
 						})
+
 					} else {
 						
 						res.json({
