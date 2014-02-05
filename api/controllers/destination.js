@@ -15,9 +15,7 @@ module.exports = {
 			
 			type: req.param('type'),
 			name: req.param('name'),
-			
 			geo: req.param('geo'),
-			
 			photos: req.param('photos'),
 			info: req.param('info')
 		});
@@ -44,19 +42,46 @@ module.exports = {
 
 	getNext: function(req, res) {
 
-		Destination.find({
-			type: req.param('type'),
-			//geo: req.param('geo'),
-			//price: req.param('price')
-		}, 
+		User.findOne(req.cookies.user_id, function(err, me) {
 
-		function (err, docs){
-			if(err){
-				res.json(err);
+			if(err) {
+
+				res.json({
+					result: "error",
+					exception: err
+				})
+
 			} else {
-				res.json(docs);
-			}
-		});
-	}
 
+				Destination.find({
+					_id: {
+						$nin: me.matches
+					}
+				}, function(err, docs) {
+
+					if(err) {
+
+						res.json({
+							result: "error",
+							exception: err
+						})
+
+					} else if(!docs || !docs.length) {
+						
+						res.json({
+							result: "success",
+							message: "No destination to show",
+							destination: []
+						})
+					} else {
+						
+						res.json({
+							result: "success",
+							destination: docs
+						})
+					}
+				})
+			}
+		})
+	}
 }
